@@ -6,7 +6,6 @@ defined('MOODLE_INTERNAL') || die;
 // into /tmp/output, which must exist.
 function local_profilestorefile_store_profiling_data($rec) {
 	$file = fopen("/tmp/output/" . $rec->runid, "w") or die("Unable to write to file, does the folder exist?");
-	$data=
 	fwrite($file, json_encode($rec));
 	fclose($file);
 }
